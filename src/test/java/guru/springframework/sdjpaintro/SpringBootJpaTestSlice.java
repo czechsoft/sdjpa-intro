@@ -8,6 +8,7 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.annotation.Commit;
 import org.springframework.test.annotation.Rollback;
 
@@ -18,12 +19,14 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
  */
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @DataJpaTest
+//@SpringBootTest
 public class SpringBootJpaTestSlice {
 
     @Autowired
     BookRepository bookRepository;
 
-    @Commit
+//    @Commit
+    @Rollback(value = false)
     @Order(1)
     @Test
     void testJpaTestSplice() {
