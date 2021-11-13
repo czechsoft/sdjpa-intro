@@ -32,7 +32,7 @@
         <dependency>
             <groupId>com.h2database</groupId>
             <artifactId>h2</artifactId>
-            <scope>test</scope>
+<!--            <scope>test</scope>-->
         </dependency>
         <dependency>
             <groupId>mysql</groupId>
@@ -45,17 +45,17 @@
         </dependency>
     </dependencies>
 
-    <profiles>
-        <profile>
-            <id>h2</id>
-            <dependencies>
-                <dependency>
-                    <groupId>com.h2database</groupId>
-                    <artifactId>h2</artifactId>
-                </dependency>
-            </dependencies>
-        </profile>
-    </profiles>
+<!--    <profiles>-->
+<!--        <profile>-->
+<!--            <id>h2</id>-->
+<!--            <dependencies>-->
+<!--                <dependency>-->
+<!--                    <groupId>com.h2database</groupId>-->
+<!--                    <artifactId>h2</artifactId>-->
+<!--                </dependency>-->
+<!--            </dependencies>-->
+<!--        </profile>-->
+<!--    </profiles>-->
 
     <build>
         <plugins>
@@ -70,7 +70,7 @@
                 <configuration>
                     <url>jdbc:mysql://127.0.0.1:3306/bookdb?useUnicode=true&amp;characterEncoding=UTF-8&amp;serverTimezone=UTC</url>
                     <username>bookadmin</username>
-                    <password>password</password>
+                    <password>bookadmin</password>
                     <outputChangeLogFile>changelog.xml</outputChangeLogFile>
                     <changeSetAuthor>JT</changeSetAuthor>
                     <changelogSchemaName>bookdb</changelogSchemaName>

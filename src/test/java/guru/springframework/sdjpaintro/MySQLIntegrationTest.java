@@ -1,5 +1,6 @@
 package guru.springframework.sdjpaintro;
 
+import guru.springframework.sdjpaintro.repositories.AuthorRepository;
 import guru.springframework.sdjpaintro.repositories.BookRepository;
 import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
@@ -22,10 +23,19 @@ public class MySQLIntegrationTest {
 
     @Autowired
     BookRepository bookRepository;
+    @Autowired
+    AuthorRepository authorRepository;
 
     @Test
-    void testMySQL() {
+    void testMySQLBook() {
         long countBefore = bookRepository.count();
+        assertThat(countBefore).isEqualTo(2);
+
+    }
+
+    @Test
+    void testMySQLAuthor() {
+        long countBefore = authorRepository.count();
         assertThat(countBefore).isEqualTo(2);
 
     }

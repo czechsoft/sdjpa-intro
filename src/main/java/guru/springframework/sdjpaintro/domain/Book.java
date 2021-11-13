@@ -1,9 +1,6 @@
 package guru.springframework.sdjpaintro.domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Objects;
 
 /**
@@ -12,8 +9,10 @@ import java.util.Objects;
 @Entity
 public class Book {
 
+    @Column(nullable = false)
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "hibernate_seq")
+    @SequenceGenerator(name="hibernate_seq", sequenceName = "hibernate_sequence", allocationSize = 1)
     private Long id;
 
     private String title;
